@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Show</title>
+<style>
+    body{
+        background: url(zz.webp);
+        background-size: cover;
+        text-align: center;
+    }
+
+    img{
+        width: 350px;
+        height: 300px;
+        display: block;
+        margin: auto;
+    }
+    
+    button{
+        display: inline-block;
+        width: 10%;
+        padding: 10px;
+        margin: 30px;
+        background: pink;
+        color: white;
+        font-family: cursive;
+        font-size: 50px;
+    }
+</style>
+
+</head>
+<body>
+    <h1>Piggy Nature</h1>
+    <img id="pigs" src=''>
+    <button onclick="backImage()">Back</button>
+    <button onclick="nextImage()">Next</button> 
+
+
+    <script>
+        var imageArray = ["LarsandRosa.gif", "Pee.png", "Pig.gif", "Princess Pig.jpeg", "Rosa_sit.jpg", "Winky Dinky Pig.jpg", "z.gif"]
+
+        var pigs = document.querySelector("#pigs")
+        var counter = 0
+
+        function backImage(){
+        counter --
+        if(counter == 0){
+            counter = 6
+        }
+        console.log(counter)
+        pigs.src= imageArray[counter]
+        }
+
+        function nextImage(){
+        counter ++
+        if(counter > 6){
+            counter = 0
+        }
+        console.log(counter)
+        pigs.src= imageArray[counter]
+        }
+
+    </script>
+</body>
+</html>
